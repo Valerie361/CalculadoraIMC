@@ -17,6 +17,12 @@ function calcularIMC() {
     // nunca pedir un valor ANTES del resultado, porque si el usuario no ingresa un valor, 
     // el resultado se mostrará como "NaN" y eso no es lo que queremos mostrar al usuario. Por eso, 
     // primero verificamos si los valores ingresados son válidos antes de mostrar el resultado del IMC.
+
+    // ----------VALIDACIONES DE LOS CAMPOS DE ENTRADA----------
+    // if (isFinite(imc)== false){
+    // resultado.innerText = "Por favor, ingrese valores válidos 😊";
+    // return;
+    // }
     
     if (isNaN(peso.value) || isNaN(altura.value) || peso.value <= 0 || altura.value <= 0) {
         resultado.innerText = "Por favor, ingrese todos los campos correctamente 😊";
@@ -56,7 +62,7 @@ function calcularIMC() {
     }
     
 }
-        
+
 
 
     
