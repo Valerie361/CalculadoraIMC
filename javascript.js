@@ -7,6 +7,10 @@ function calcularIMC() {
     let A = parseFloat(peso.value);
     let B = parseFloat(altura.value);
     let imc = A / (B * B);
+    ColorIMC(imc);
+    ClasificarIMC(imc);
+}
+function ColorIMC(imc) {
     document.getElementById("valorIMC")
     if (imc >= 22 && imc <= 24.9) {
         document.getElementById("valorIMC").style.color = "green";
@@ -14,6 +18,7 @@ function calcularIMC() {
     else {
         document.getElementById("valorIMC").style.color = "red"; 
     }
+}
     // nunca pedir un valor ANTES del resultado, porque si el usuario no ingresa un valor, 
     // el resultado se mostrará como "NaN" y eso no es lo que queremos mostrar al usuario. Por eso, 
     // primero verificamos si los valores ingresados son válidos antes de mostrar el resultado del IMC.
@@ -23,7 +28,7 @@ function calcularIMC() {
     // resultado.innerText = "Por favor, ingrese valores válidos 😊";
     // return;
     // }
-    
+function ClasificarIMC(imc) {
     if (isNaN(peso.value) || isNaN(altura.value) || peso.value <= 0 || altura.value <= 0) {
         resultado.innerText = "Por favor, ingrese todos los campos correctamente 😊";
         return;
